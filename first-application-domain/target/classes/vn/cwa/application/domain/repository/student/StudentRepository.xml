@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="vn.cwa.application.domain.repository.student.StudentRepository">
+
+	<resultMap id="studentResultMap" type="Student">
+		<id column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="age" property="age" />
+		<result column="dateofbirth" property="dateOfBirth" />
+	</resultMap>
+
+	<select id="findById" parameterType="long" resultMap="studentResultMap">
+		SELECT * FROM student WHERE id = #{id}
+	</select>
+
+	<select id="findAll" resultMap="studentResultMap">
+		SELECT * FROM student;
+	</select>
+	
+	<insert id="insert" parameterType="Student">
+        INSERT INTO student(name,age,dateofbirth) VALUES (#{name}, #{age}, #{dateOfBirth})
+    </insert>
+    
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM student WHERE id = #{id}
+    </delete>
+    
+    <update id="update" parameterType="Student">
+        UPDATE
+            student 
+        SET
+            name = #{name},
+            age = #{age},
+            dateofbirth = #{dateOfBirth}
+        WHERE
+            id = #{id}
+    </update>
+
+</mapper>
