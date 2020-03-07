@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="vn.cwa.application.domain.repository.applicant_campaign.ApplicantRepository">
+
+	<resultMap id="ApplicantResultMap" type="Applicant">
+		<id column="id" property="id" />
+		<result column="cp_id" property="cpId" />
+		<result column="start_date" property="startDate" />
+		<result column="end_date" property="endDate" />
+		<result column="label1_value" property="label1Value" />
+		<result column="label2_value" property="label2Value" />
+		<result column="label3_value" property="label3Value" />
+		<result column="label4_value" property="label4Value" />
+		<result column="label5_value" property="label5Value" />
+		<result column="label6_value" property="label6Value" />
+		<result column="label7_value" property="label7Value" />
+		<result column="label8_value" property="label8Value" />
+		<result column="label9_value" property="label9Value" />
+		<result column="label10_value" property="label10Value" />
+
+	</resultMap>
+	
+	<!-- 
+	<select id="getByCamId" resultMap="ApplicantResultMap">
+		SELECT
+		*
+		FROM
+		applicant, campaign
+		WHERE
+		applicant.cp_id =
+		campaign.id
+		AND
+		campaign.id = #{campaignId}
+	</select> -->
+	
+	<select id="getApplicantCsvByCriteria" resultMap="ApplicantResultMap">
+		SELECT
+		*
+		FROM
+		applicant, campaign
+		WHERE
+		applicant.cp_id =
+		campaign.id
+		AND
+		campaign.id = #{criteria.campaignId}
+	</select>
+	
+</mapper>

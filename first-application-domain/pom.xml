@@ -52,6 +52,18 @@
 			<type>pom</type>
 		</dependency>
 		<!-- == End TERASOLUNA == -->
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>net.sf.supercsv</groupId>
+			<artifactId>super-csv</artifactId>
+			<version>2.4.0</version>
+		</dependency>
 
 		<!-- == Begin Database == -->
 		<!-- <dependency> -->
