@@ -6,5 +6,5 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.data.domain.Pageable;
 
 public interface ApplicantService {
-  void handlerExportCSV(ApplicantExportCriteria criteria, HttpServletResponse response, Pageable page) throws IOException, IllegalArgumentException, IllegalAccessException;
+  void handlerExportCSV(ApplicantExportCriteria criteria, HttpServletResponse response, Pageable page) throws IOException, IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException, Exception;
 }
